@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamento</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Agende seu horário</h2>
+    <form action="processa_agendamento.php" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" name="nome" required>
+
+      <label for="telefone">Telefone:</label>
+      <input type="text" name="telefone" required>
+
+      <label for="servico">Serviço desejado:</label>
+      <input type="text" name="servico" required>
+
+      <label for="data_agendada">Data:</label>
+      <input type="date" name="data_agendada" required>
+
+      <label for="hora_agendada">Hora:</label>
+      <input type="time" name="hora_agendada" required>
+
+      <label for="observacoes">Observações:</label>
+      <textarea name="observacoes" rows="4"></textarea>
+
+      <button type="submit">Confirmar Agendamento</button>
+    </form>
+  </div>
+</body>
+</html>
