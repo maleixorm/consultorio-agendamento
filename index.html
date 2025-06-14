@@ -9,43 +9,55 @@
 </head>
 <body>
   <div class="container">
-    <div class="d-flex justify-center align-center">
+    <div class="d-flex flex-row justify-content-between my-5">
       <img src="" alt="Logo">
-      <h2>Agende seu horário</h2>
+      <h2>Nome da Empresa</h2>
     </div>
     
-    <form action="processa_agendamento.php" method="POST">
-      <div class="mb-3">
-        <label for="nome" class="form-label">Nome: </label>
-        <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo" required>
+    <div class="card text-center">
+      <div class="card-header">
+        Agende seu horário
       </div>
-      
-      <div class="mb-3">
-        <label for="telefone" class="form-label">Telefone: </label>
-        <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Seu nome completo" required>
+      <div class="card-body">
+          <form action="processa_agendamento.php" method="POST">
+            <div class="my-3">
+              <div class="col-md-6 d-flex align-items-center my-3 gap-2">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo..." required>
+              </div>
+              <div class="col-md-6 d-flex align-items-center my-3 gap-2">
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Seu telefone..." required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <select class="form-select" aria-label="servico" name="servico" required>
+                <option disabled selected>Escolha o serviço a ser agendado:</option>
+                <option value="1">Consulta</option>
+                <option value="2">Retorno</option>
+                <option value="3">Exame</option>
+                <option value="4">Cirurgia</option>
+              </select>
+            </div>
+            <div class="my-3 d-flex justify-content-start gap-5">
+              <div class="d-flex align-items-center my-3 gap-2">
+                <label for="data_agendada" class="form-label">Data: </label>
+                <input class="form-control" type="date" name="data_agendada" required>
+              </div>
+              <div class="d-flex align-items-center my-3 gap-2">
+                <label for="hora_agendada" class="form-label">Hora: </label>
+                <input class="form-control" type="time" name="hora_agendada" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="observacoes" class="form-label">Observações: </label>
+              <textarea class="form-control" id="observacoes" name="observacoes" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
+          </form>
+        </div>
+      <div class="card-footer text-body-secondary">
+        &copy; Nome da empresa | Todos os direitos reservados.
       </div>
-
-      <select class="form-select" aria-label="servico" name="servico" required>
-        <option disabled selected>Escolha o serviço a ser agendado:</option>
-        <option value="1">Consulta</option>
-        <option value="2">Retorno</option>
-        <option value="3">Exame</option>
-        <option value="4">Cirurgia</option>
-      </select>
-
-      <label for="data_agendada">Data:</label>
-      <input type="date" name="data_agendada" required>
-
-      <label for="hora_agendada">Hora:</label>
-      <input type="time" name="hora_agendada" required>
-
-      <div class="mb-3">
-        <label for="observacoes" class="form-label">Observações: </label>
-        <textarea class="form-control" id="observacoes" name="observacoes" rows="3"></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Confirmar Agendamento</button>
-    </form>
+    </div>
   </div>
 </body>
 </html>
