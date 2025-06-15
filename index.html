@@ -21,23 +21,23 @@
       <div class="card-body">
           <form action="processa_agendamento.php" method="POST">
             <div class="my-3">
-              <div class="col-md-6 d-flex align-items-center my-3 gap-2">
+              <div class="col-auto d-flex align-items-center my-3 gap-2">
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu nome completo..." required>
               </div>
-              <div class="col-md-6 d-flex align-items-center my-3 gap-2">
+              <div class="col-auto d-flex align-items-center my-3 gap-2">
                 <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Seu telefone..." required>
               </div>
             </div>
-            <div class="col-md-6">
-              <select class="form-select" aria-label="servico" name="servico" required>
+            <div class="col-auto">
+              <select class="form-select" aria-label="servico" name="servico" id="servico" required>
                 <option disabled selected>Escolha o serviço a ser agendado:</option>
-                <option value="1">Consulta</option>
-                <option value="2">Retorno</option>
-                <option value="3">Exame</option>
-                <option value="4">Cirurgia</option>
+                <option value="Consulta">Consulta</option>
+                <option value="Retorno">Retorno</option>
+                <option value="Exame">Exame</option>
+                <option value="Cirurgia">Cirurgia</option>
               </select>
             </div>
-            <div class="my-3 d-flex justify-content-start gap-5">
+            <div class="my-3 d-flex flex-wrap justify-content-start gap-2">
               <div class="d-flex align-items-center my-3 gap-2">
                 <label for="data_agendada" class="form-label">Data: </label>
                 <input class="form-control" type="date" name="data_agendada" required>
