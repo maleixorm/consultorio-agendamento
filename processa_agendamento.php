@@ -29,7 +29,7 @@ $stmt->bind_param("ssssss", $nome, $telefone, $servico, $data, $hora, $obs);
 
 if ($stmt->execute()) {
     echo "<p>Agendamento realizado com sucesso!</p>";
-    header('Location: index.php');
+    header('Location: index.html');
 } else {
     echo "<p>Erro ao agendar: " . $stmt->error . "</p>";
 }
