@@ -12,6 +12,12 @@
       <img src="" alt="Logo">
       <h2 class="">Nome da Empresa</h2>
     </div>
+
+    <? if (isset($_GET['acao']) && $_GET['acao'] == 1) { ?>
+      <div class="alert alert-success">
+        Agendamento realizado com sucesso!
+      </div>
+    <? } ?>  
     
     <div class="card text-bg-dark text-center border-secondary">
       <div class="card-header bg-secondary text-white">
