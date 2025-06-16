@@ -1,16 +1,5 @@
 <?php
-// Conexão com o banco
-$host = 'localhost';
-$db = 'sistema_agendamentos';
-$user = 'php';
-$pass = '123456';
-
-$conn = new mysqli($host, $user, $pass, $db);
-
-// Verificar conexão
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+require "conexao.php";
 
 // Coletar dados do formulário
 $nome = $_POST['nome'];
@@ -28,8 +17,7 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssss", $nome, $telefone, $servico, $data, $hora, $obs);
 
 if ($stmt->execute()) {
-    echo "<p>Agendamento realizado com sucesso!</p>";
-    header('Location: index.html');
+    header('Location: index.php?acao=1');
 } else {
     echo "<p>Erro ao agendar: " . $stmt->error . "</p>";
 }
